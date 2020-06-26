@@ -1,0 +1,135 @@
+{
+    "ios_app_store_link" : "",
+    "android_play_store_link" : "",
+    "sticker_packs" : [
+    {
+        "identifier": "com.alexeyParkhomenko.CompositionalTest",
+        "name": "Name",
+        "publisher": "Alexey Parkhomenko",
+        "tray_image_file" : "WATrayIcon.png",
+        "publisher_website" : "",
+        "privacy_policy_website" : "",
+        "license_agreement_website" : "",
+        "stickers": [
+        {
+            "image_file": "WASticker-1.png",
+            "emojis": ["☕","🙂"]
+        },
+        {
+            "image_file": "WASticker-2.png",
+            "emojis": ["😄","😀"]
+        },
+        {
+            "image_file": "WASticker-3.png",
+            "emojis": ["😆","😂"]
+        },
+        {
+            "image_file": "WASticker-4.png",
+            "emojis": ["😃", "😍"]
+        },
+        {
+            "image_file": "WASticker-5.png",
+            "emojis": ["😭","💧"]
+        },
+        {
+            "image_file": "WASticker-6.png",
+            "emojis": ["😍","♥"]
+        },
+        {
+            "image_file": "WASticker-7.png",
+            "emojis": ["💔","👎"]
+        },
+        {
+            "image_file": "WASticker-8.png",
+            "emojis": ["😍","💑"]
+        },
+        {
+            "image_file": "WASticker-9.png",
+            "emojis": ["😘","🍪"]
+        },
+        {
+            "image_file": "WASticker-10.png",
+            "emojis": ["🤔","😐"]
+        },
+        {
+            "image_file": "WASticker-11.png",
+            "emojis": ["😱","😵"]
+        },
+        {
+            "image_file": "WASticker-12.png",
+            "emojis": ["😡","😠"]
+        },
+        {
+            "image_file": "WASticker-13.png",
+            "emojis": ["❓","🤔"]
+        },
+        {
+            "image_file": "WASticker-14.png",
+            "emojis": ["🌈","😜"]
+        },
+        {
+            "image_file": "WASticker-15.png",
+            "emojis": ["💻","😩"]
+        },
+        {
+            "image_file": "WASticker-16.png",
+            "emojis": ["😡","😤"]
+        },
+        {
+            "image_file": "WASticker-17.png",
+            "emojis": ["😩","😨"]
+        },
+        {
+            "image_file": "WASticker-18.png",
+            "emojis": ["😔", "😨"]
+        },
+        {
+            "image_file": "WASticker-19.png",
+            "emojis": ["🎉","✨"]
+        },
+        {
+            "image_file": "WASticker-20.png",
+            "emojis": ["🤮","👎"]
+        },
+        {
+            "image_file": "WASticker-21.png",
+            "emojis": ["🖐","🙋"]
+        },
+        {
+            "image_file": "WASticker-22.png",
+            "emojis": ["🖐","👋"]
+        },
+        {
+            "image_file": "WASticker-23.png",
+            "emojis": ["😡","😤"]
+        },
+        {
+            "image_file": "WASticker-24.png",
+            "emojis": ["😩","😨"]
+        },
+        {
+            "image_file": "WASticker-25.png",
+            "emojis": ["😔", "😨"]
+        },
+        {
+            "image_file": "WASticker-26.png",
+            "emojis": ["🎉","✨"]
+        },
+        {
+            "image_file": "WASticker-27.png",
+            "emojis": ["🤮","👎"]
+        },
+        {
+            "image_file": "WASticker-28.png",
+            "emojis": ["🖐","🙋"]
+        },
+        {
+            "image_file": "WASticker-29.png",
+            "emojis": ["🖐","👋"]
+        },
+        {
+            "image_file": "WASticker-30.png",
+            "emojis": ["🖐","👋"]
+        }]
+    }]
+}
