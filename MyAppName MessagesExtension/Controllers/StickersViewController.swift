@@ -128,7 +128,7 @@ class StickersViewController: UIViewController {
     func setupCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
             
-            let float = CGFloat(1 / Double(UserSettings.count))
+            let float = CGFloat(1 / Double(UserSettings.countPhone))
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(float),
                                                  heightDimension: .fractionalHeight(1.0))
@@ -235,10 +235,10 @@ extension StickersViewController: FooterButtonsDelegate {
     
     @objc func loopButtonTapped() {
         
-        if UserSettings.count > 5 {
-            UserSettings.count = 3
+        if UserSettings.countPhone > 5 {
+            UserSettings.countPhone = 3
         } else {
-            UserSettings.count += 1
+            UserSettings.countPhone += 1
         }
         
         dataSource.apply(currentSnapshot, animatingDifferences: true)
