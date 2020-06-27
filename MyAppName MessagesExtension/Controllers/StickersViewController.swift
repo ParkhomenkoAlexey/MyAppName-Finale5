@@ -22,6 +22,8 @@ class StickersViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, StickerModel>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, StickerModel>! = nil
     
+    let moreAppsService = MoreAppsService()
+    
     weak var delegate: AppFeatureVCDelegate?
 
     var userData = UserData()
@@ -42,6 +44,16 @@ class StickersViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData()
+        
+        moreAppsService.getApps { (result) in
+            switch result {
+                
+            case .success(let images):
+                print("")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     func loadStickerData() {
@@ -69,10 +81,6 @@ class StickersViewController: UIViewController {
     }
     
     func setupNavigationBar() {
-        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
     
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "App Features Light Mode Icon"), style: .plain, target: self, action: #selector(сubesButtonTapped))
         

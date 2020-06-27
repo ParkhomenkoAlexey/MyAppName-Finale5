@@ -171,7 +171,7 @@ extension SectionFooter: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if let appId = dataSource[indexPath.row].keys.first {
-            
+//
 //            messageDelegate?.openStoreApp(id: appId)
 //        }
     }
@@ -194,7 +194,7 @@ extension SectionFooter: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        let numberOfCells: Int = Int(ceil(8 / 2)) // 2
+        let numberOfCells: Int = Int(ceil(Double(8 / 2))) // 2
         let totalCellWidth = Int(cellSize.width) * numberOfCells
         let totalSpacingWidth = Int(sectionInserts.left) * (numberOfCells - 1)
         

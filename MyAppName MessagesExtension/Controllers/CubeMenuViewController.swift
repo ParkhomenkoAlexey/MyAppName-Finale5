@@ -61,10 +61,6 @@ class CubeMenuViewController: UIViewController {
     
     func setupNavigationBar() {
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Button Back Light Mode Icon"), style: .plain, target: self, action: #selector(back))
         
     }

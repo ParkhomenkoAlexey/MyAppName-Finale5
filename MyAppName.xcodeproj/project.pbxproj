@@ -61,6 +61,7 @@
 		F029694F249F861F00CAF07D /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F029694E249F861F00CAF07D /* SFProDisplay-Semibold.ttf */; };
 		F0296950249F861F00CAF07D /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F029694E249F861F00CAF07D /* SFProDisplay-Semibold.ttf */; };
 		F0296952249F863800CAF07D /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0296951249F863800CAF07D /* UIFont + Extension.swift */; };
+		F04A21B724A75A9200224F32 /* MoreAppsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04A21B624A75A9200224F32 /* MoreAppsModel.swift */; };
 		F09FB7DC24A634E7005B3AD1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09FB7DB24A634E7005B3AD1 /* StoreKit.framework */; };
 		F0CD191124A3604A00494A18 /* StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD191024A3604A00494A18 /* StickersViewController.swift */; };
 		F0CD191A24A3606200494A18 /* StickerPackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD191224A3606100494A18 /* StickerPackManager.swift */; };
@@ -195,6 +196,7 @@
 		F029694B249F861700CAF07D /* SF-Pro-Text-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.ttf"; sourceTree = "<group>"; };
 		F029694E249F861F00CAF07D /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
 		F0296951249F863800CAF07D /* UIFont + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		F04A21B624A75A9200224F32 /* MoreAppsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAppsModel.swift; sourceTree = "<group>"; };
 		F09FB7DB24A634E7005B3AD1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F0CD191024A3604A00494A18 /* StickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickersViewController.swift; sourceTree = "<group>"; };
 		F0CD191224A3606100494A18 /* StickerPackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerPackManager.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				D7B591E024A4C5880003F48F /* ActivityIndicatorManager.swift */,
 				D7B591E524A5F1AD0003F48F /* MoreAppsDataManager.swift */,
+				F04A21B624A75A9200224F32 /* MoreAppsModel.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 			files = (
 				F0CD192424A3609700494A18 /* MainTableCell.swift in Sources */,
 				F0296948249F85C500CAF07D /* SectionFooter.swift in Sources */,
+				F04A21B724A75A9200224F32 /* MoreAppsModel.swift in Sources */,
 				F0CD191E24A3606200494A18 /* Sticker.swift in Sources */,
 				F029694A249F85CA00CAF07D /* AppCollectionCell.swift in Sources */,
 				F0CD191F24A3606200494A18 /* WebPManager.swift in Sources */,
