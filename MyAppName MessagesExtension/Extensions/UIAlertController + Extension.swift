@@ -10,6 +10,7 @@ import UIKit
 
 extension UIAlertController {
     func addSpinner() {
+//        print("fff")
         let activity: UIActivityIndicatorView = UIActivityIndicatorView(style: .gray)
         view.addSubview(activity)
 
