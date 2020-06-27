@@ -10,9 +10,9 @@ import Foundation
 
 struct UserData {
 
-    private let userDefaults:UserDefaults
+    private let userDefaults: UserDefaults
 
-    var productPurchased:Bool{
+    var productPurchased: Bool {
         get {
             return userDefaults.bool(forKey: IAPProduct.nonConsumable.rawValue)
         }
@@ -27,5 +27,4 @@ struct UserData {
         userDefaults.register(defaults: [
                 IAPProduct.nonConsumable.rawValue: false])
     }
-
 }

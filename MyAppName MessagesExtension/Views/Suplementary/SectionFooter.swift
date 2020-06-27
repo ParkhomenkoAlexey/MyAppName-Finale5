@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol FooterButtonsDelegate: class {
     func unlockButtonPressed()
@@ -32,8 +33,8 @@ class SectionFooter: UICollectionReusableView {
     
     weak var delegate: FooterButtonsDelegate?
     weak var messageDelegate: MessageExtensionDelegate?
-
-//    var dataSource = MoreAppsDataManager.shared.dataSource
+    
+    var appModels = [ResultModel]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -157,27 +158,25 @@ class SectionFooter: UICollectionReusableView {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension SectionFooter: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//       return dataSource.count
-        return 8
+       return appModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppCollectionCell.reuseId, for: indexPath) as! AppCollectionCell
-//       let itemToShow = dataSource[indexPath.row].values.first
-//        cell.appImageView.image = itemToShow
-        cell.backgroundColor = .red
+       let itemToShow = appModels[indexPath.row]
+        cell.appImageView.sd_setImage(with: itemToShow.artworkUrl)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let appId = dataSource[indexPath.row].keys.first {
-//
-//            messageDelegate?.openStoreApp(id: appId)
-//        }
+        if let appId = appModels[indexPath.row].trackId {
+            messageDelegate?.openStoreApp(id: String(appId))
+        }
     }
 
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension SectionFooter: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -194,7 +193,7 @@ extension SectionFooter: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        let numberOfCells: Int = Int(ceil(Double(8 / 2))) // 2
+        let numberOfCells: Int = Int(ceil(Double(appModels.count / 2))) // 2
         let totalCellWidth = Int(cellSize.width) * numberOfCells
         let totalSpacingWidth = Int(sectionInserts.left) * (numberOfCells - 1)
         

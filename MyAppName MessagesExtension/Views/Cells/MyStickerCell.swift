@@ -16,9 +16,8 @@ class MyStickerCell: UICollectionViewCell {
     var stickerView = MSStickerView()
     var lockButton = UIButton()
     
-    private var allStickersUnlocked:Bool{
+    private var allStickersUnlocked: Bool {
         return UserData().productPurchased
-        //return false
     }
     
     func configure(_ object: StickerModel) {

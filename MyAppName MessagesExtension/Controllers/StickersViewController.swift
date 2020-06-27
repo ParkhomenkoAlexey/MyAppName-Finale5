@@ -27,6 +27,7 @@ class StickersViewController: UIViewController {
     weak var delegate: AppFeatureVCDelegate?
 
     var userData = UserData()
+    var appModels = [ResultModel]()
     
     enum Section {
         case main
@@ -45,11 +46,12 @@ class StickersViewController: UIViewController {
         setupDataSource()
         reloadData()
         
-        moreAppsService.getApps { (result) in
+        moreAppsService.getApps { [weak self] (result) in
             switch result {
                 
-            case .success(let images):
-                print("")
+            case .success(let apps):
+                self?.appModels = apps.results.filter { $0.artworkUrl != nil }
+                
             case .failure(let error):
                 print(error)
             }
@@ -171,6 +173,7 @@ class StickersViewController: UIViewController {
         dataSource.supplementaryViewProvider = { (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
             
             if let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionFooter.reuseId, for: indexPath) as? SectionFooter {
+                sectionFooter.appModels = self.appModels
                 sectionFooter.delegate = self
                 sectionFooter.messageDelegate = self
                 
@@ -178,8 +181,6 @@ class StickersViewController: UIViewController {
             } else {
                 fatalError("Cannot create new supplementary")
             }
-            
-            
         }
     }
 }

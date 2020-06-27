@@ -14,7 +14,7 @@
 		D7B591DE24A4C3850003F48F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B591DD24A4C3850003F48F /* UserData.swift */; };
 		D7B591E124A4C5880003F48F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B591E024A4C5880003F48F /* ActivityIndicatorManager.swift */; };
 		D7B591E424A5D9A30003F48F /* UIviewController + AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B591E324A5D9A30003F48F /* UIviewController + AlertExtension.swift */; };
-		D7B591E624A5F1AD0003F48F /* MoreAppsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B591E524A5F1AD0003F48F /* MoreAppsDataManager.swift */; };
+		D7B591E624A5F1AD0003F48F /* MoreAppsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B591E524A5F1AD0003F48F /* MoreAppsService.swift */; };
 		F022E434249E3AC900BFE089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F022E433249E3AC900BFE089 /* Assets.xcassets */; };
 		F022E43B249E3AC900BFE089 /* MyAppName MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F022E43A249E3AC900BFE089 /* MyAppName MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F022E440249E3AC900BFE089 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F022E43F249E3AC900BFE089 /* Messages.framework */; };
@@ -148,7 +148,7 @@
 		D7B591DD24A4C3850003F48F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D7B591E024A4C5880003F48F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		D7B591E324A5D9A30003F48F /* UIviewController + AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIviewController + AlertExtension.swift"; sourceTree = "<group>"; };
-		D7B591E524A5F1AD0003F48F /* MoreAppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAppsDataManager.swift; sourceTree = "<group>"; };
+		D7B591E524A5F1AD0003F48F /* MoreAppsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAppsService.swift; sourceTree = "<group>"; };
 		F022E430249E3AC600BFE089 /* MyAppName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F022E433249E3AC900BFE089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F022E435249E3AC900BFE089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -288,24 +288,6 @@
 			path = IAPService;
 			sourceTree = "<group>";
 		};
-		D7B591DF24A4C57E0003F48F /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				D7B591E024A4C5880003F48F /* ActivityIndicatorManager.swift */,
-				D7B591E524A5F1AD0003F48F /* MoreAppsDataManager.swift */,
-				F04A21B624A75A9200224F32 /* MoreAppsModel.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		D7B591E224A5D9700003F48F /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				D7B591E324A5D9A30003F48F /* UIviewController + AlertExtension.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		F022E429249E3AC600BFE089 = {
 			isa = PBXGroup;
 			children = (
@@ -349,10 +331,6 @@
 		F022E441249E3AC900BFE089 /* MyAppName MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
-				D7B591E224A5D9700003F48F /* UIKit */,
-				D7B591DF24A4C57E0003F48F /* Managers */,
-				D7B591D824A4BECC0003F48F /* IAPService */,
-				F022E442249E3AC900BFE089 /* MessagesViewController.swift */,
 				F0CD197024A378D300494A18 /* Services */,
 				F022E49A249F764200BFE089 /* Models */,
 				F0CD197124A378DC00494A18 /* Controllers */,
@@ -413,7 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				F022E494249E3D7100BFE089 /* StickerModel.swift */,
-				D7B591DD24A4C3850003F48F /* UserData.swift */,
+				F04A21B624A75A9200224F32 /* MoreAppsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,6 +410,7 @@
 			children = (
 				F0296951249F863800CAF07D /* UIFont + Extension.swift */,
 				F0CD192924A360BB00494A18 /* UIAlertController + Extension.swift */,
+				D7B591E324A5D9A30003F48F /* UIviewController + AlertExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -519,7 +498,11 @@
 		F0CD197024A378D300494A18 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D7B591D824A4BECC0003F48F /* IAPService */,
 				F0CD196E24A3738100494A18 /* UserSettings.swift */,
+				D7B591DD24A4C3850003F48F /* UserData.swift */,
+				D7B591E524A5F1AD0003F48F /* MoreAppsService.swift */,
+				D7B591E024A4C5880003F48F /* ActivityIndicatorManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -527,6 +510,7 @@
 		F0CD197124A378DC00494A18 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F022E442249E3AC900BFE089 /* MessagesViewController.swift */,
 				F0CD191024A3604A00494A18 /* StickersViewController.swift */,
 				F0CD192724A360A000494A18 /* CubeMenuViewController.swift */,
 			);
@@ -780,7 +764,7 @@
 				D7B591E424A5D9A30003F48F /* UIviewController + AlertExtension.swift in Sources */,
 				F0CD191C24A3606200494A18 /* Interoperability.swift in Sources */,
 				F022E495249E3D7100BFE089 /* StickerModel.swift in Sources */,
-				D7B591E624A5F1AD0003F48F /* MoreAppsDataManager.swift in Sources */,
+				D7B591E624A5F1AD0003F48F /* MoreAppsService.swift in Sources */,
 				F0CD192A24A360BB00494A18 /* UIAlertController + Extension.swift in Sources */,
 				F022E49C249F765000BFE089 /* MyStickerCell.swift in Sources */,
 				F0CD191D24A3606200494A18 /* ImageData.swift in Sources */,

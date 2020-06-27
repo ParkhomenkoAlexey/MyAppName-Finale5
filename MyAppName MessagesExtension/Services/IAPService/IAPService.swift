@@ -114,7 +114,6 @@ extension IAPService: SKPaymentTransactionObserver {
                 print(error.localizedDescription)
             }
         }
-        
     }
 
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {

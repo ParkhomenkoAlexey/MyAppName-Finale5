@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityIndicatorManager{
+class ActivityIndicatorManager { 
 
     let indicatorSideLength:CGFloat = 50
 

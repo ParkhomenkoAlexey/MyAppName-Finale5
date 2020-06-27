@@ -16,5 +16,6 @@ target 'MyAppName MessagesExtension' do
   # Pods for MyAppName MessagesExtension
 pod 'YYImage'
 pod 'YYImage/WebP'
+pod 'SDWebImage', '~> 5.0'
 
 end
