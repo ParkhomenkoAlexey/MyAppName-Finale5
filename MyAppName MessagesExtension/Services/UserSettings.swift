@@ -18,7 +18,6 @@ final class UserSettings {
         get {
             
             if let count = UserDefaults.standard.object(forKey: SettingKey.count.rawValue) as? Int {
-                print("111")
                 return count
             } else {
                 return 3
