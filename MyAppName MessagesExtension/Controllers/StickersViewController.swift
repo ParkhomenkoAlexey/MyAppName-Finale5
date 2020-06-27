@@ -10,6 +10,10 @@ import UIKit
 import Messages
 import StoreKit
 
+protocol AppFeatureVCDelegate: class {
+    func appFeatureVCDidSelectAdd()
+}
+
 class StickersViewController: UIViewController {
 
     var stickers = [StickerModel]()
@@ -17,6 +21,8 @@ class StickersViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, StickerModel>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, StickerModel>! = nil
+    
+    weak var delegate: AppFeatureVCDelegate?
 
     var userData = UserData()
     
@@ -79,7 +85,7 @@ class StickersViewController: UIViewController {
         
         currentSnapshot.appendItems(stickers, toSection: .main)
         
-        dataSource.apply(currentSnapshot, animatingDifferences: true)
+        dataSource.apply(currentSnapshot, animatingDifferences: false)
         
     }
     
@@ -210,6 +216,12 @@ extension StickersViewController: FooterButtonsDelegate {
 
         let cubeController = CubeMenuViewController()
         self.navigationController?.pushViewController(cubeController, animated: true)
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.delegate?.appFeatureVCDidSelectAdd()
+        }
+        
     }
     
     @objc func loopButtonTapped() {

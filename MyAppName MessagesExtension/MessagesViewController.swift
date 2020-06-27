@@ -24,7 +24,6 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidAppear(animated)
     }
     
-    
     // MARK: - Conversation Handling
     
     override func willBecomeActive(with conversation: MSConversation) {
@@ -32,7 +31,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         present(with: self.presentationStyle)
     }
-
+    
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         super.didTransition(to: presentationStyle)
         
@@ -42,32 +41,48 @@ class MessagesViewController: MSMessagesAppViewController {
     private func present(with presentationStyle:MSMessagesAppPresentationStyle) {
         
         let rootVC = StickersViewController()
+        var prevVC: CubeMenuViewController?
         
         for child in children {
-
-            
-            child.willMove(toParent: nil)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
+            if let navVC = child as? UINavigationController {
+                if let cubeVC = navVC.topViewController as? CubeMenuViewController {
+                    prevVC = cubeVC
+                }
+            }
         }
         
-        let navigationVC = UINavigationController(rootViewController: rootVC)
-        
-        
-        let viewController = navigationVC
-        
-        addChild(viewController)
-        
-        viewController.view.frame = view.bounds
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(viewController.view)
-        
-        viewController.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        viewController.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        viewController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        viewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        viewController.didMove(toParent: self)
+        if prevVC != nil {
+            print("ничего не делать")
+        } else {
+            for child in children {
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
+            }
+            
+            rootVC.delegate = self
+            let navigationVC = UINavigationController(rootViewController: rootVC)
+            
+            let viewController = navigationVC
+            
+            addChild(viewController)
+            
+            viewController.view.frame = view.bounds
+            viewController.view.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(viewController.view)
+            
+            viewController.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+            viewController.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+            viewController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            viewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            
+            viewController.didMove(toParent: self)
+        }
     }
-    
+}
+
+extension MessagesViewController: AppFeatureVCDelegate {
+    func appFeatureVCDidSelectAdd() {
+        requestPresentationStyle(.expanded)
+    }
 }
