@@ -14,7 +14,7 @@ extension UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         if isBuy == true {
-        let cancelAction = UIAlertAction(title: "Cancel", style:.cancel)
+        let cancelAction = UIAlertAction(title: "Cancel", style:.default)
         let price = IAPService.shared.productPrice ?? "$0.99"
         let okAction = UIAlertAction(title: "Unlock \(price)", style: .default) { (_) in
             completion()

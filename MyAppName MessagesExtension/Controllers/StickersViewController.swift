@@ -44,6 +44,7 @@ class StickersViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData()
+        print(UserSettings.shared.currentCount)
         
         moreAppsService.getApps { [weak self] (result) in
             switch result {
@@ -121,7 +122,7 @@ class StickersViewController: UIViewController {
     func setupCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
             
-            let float = CGFloat(1 / Double(UserSettings.countPhone))
+            let float = CGFloat(1 / Double(UserSettings.shared.currentCount))
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(float),
                                                   heightDimension: .fractionalHeight(1.0))
@@ -244,10 +245,11 @@ extension StickersViewController: FooterButtonsDelegate, HeaderButtonsDelegate {
     }
     
     func loopButtonPressed() {
-        if UserSettings.countPhone > 5 {
-            UserSettings.countPhone = 3
+        
+        if UserSettings.shared.currentCount > UserSettings.shared.viewType.rawValue + 2 {
+            UserSettings.shared.currentCount = UserSettings.shared.viewType.rawValue
         } else {
-            UserSettings.countPhone += 1
+            UserSettings.shared.currentCount += 1
         }
         
         dataSource.apply(currentSnapshot, animatingDifferences: true)

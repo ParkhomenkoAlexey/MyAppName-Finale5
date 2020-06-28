@@ -61,7 +61,7 @@ class MainTableCell: UITableViewCell {
         if UIDevice.current.userInterfaceIdiom == .pad {
             if appFeatureModel.title == "ADD TO WHATSAPP" {
                 self.mainLabel.text = "OPPS"
-                self.descriptionLabel.text = "WhatsApp не имеет версии для iPad. Если вы хотите добавть стикеры в WhatsApp Вы можете сделать это на Вашем iPhone."
+                self.descriptionLabel.text = "WhatsApp don’t have official version for iPad. If you want to add stickers to WhatsApp, you can do it on your iPhone."
                 self.actionButton.isHidden = true
             }
         }

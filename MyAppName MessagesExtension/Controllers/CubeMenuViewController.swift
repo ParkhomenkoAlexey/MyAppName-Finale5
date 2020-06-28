@@ -19,13 +19,13 @@ struct AppFeatureCellModel {
         return [
             AppFeatureCellModel(title: "ADD TO WHATSAPP",
                                 description: "To add this Sticker Pack to WhatsApp push the button and follow instructions.",
-                                buttonName: "Add Stickers to WhatsApp", color: #colorLiteral(red: 0.6039215686, green: 1, blue: 0.5803921569, alpha: 1), buttonColor: .systemGreen),
+                                buttonName: "Add Stickers to WhatsApp", color: #colorLiteral(red: 0.446657598, green: 1, blue: 0.5287287831, alpha: 1), buttonColor: .systemGreen),
             AppFeatureCellModel(title: "CHECK OUT SOME MORE",
                                 description: "We’ve made lots of awesome apps and stickers. Feel free to try it out!",
-                                buttonName: "Go to Developer Account", color: #colorLiteral(red: 0.8705882353, green: 0.6196078431, blue: 1, alpha: 1), buttonColor: .systemPurple),
+                                buttonName: "Go to Developer Account", color: #colorLiteral(red: 0.9148025513, green: 0.6037712097, blue: 1, alpha: 1), buttonColor: .systemPurple),
             AppFeatureCellModel(title: "REVIEW",
                                 description: "Rate us please! 5 stars review is what cheer us up! Thank you!",
-                                buttonName: "Rate 5 ★", color: #colorLiteral(red: 1, green: 0.831372549, blue: 0, alpha: 1), buttonColor: .systemOrange)
+                                buttonName: "Rate 5 ★", color: #colorLiteral(red: 1, green: 0.802816689, blue: 0, alpha: 1), buttonColor: .systemOrange)
         ]
     }()
 }
