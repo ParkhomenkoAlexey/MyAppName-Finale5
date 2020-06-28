@@ -208,34 +208,3 @@ extension SectionFooter: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-
-// MARK: - SwiftUI
-import SwiftUI
-
-struct SectionFooterProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            Group {
-                ContainerView().edgesIgnoringSafeArea(.all)
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-                    .previewDisplayName("iPhone 11 Pro")
-                
-                ContainerView().edgesIgnoringSafeArea(.all)
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 7"))
-                    .previewDisplayName("iPhone 7")
-            }
-        }
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = UINavigationController(rootViewController: StickersViewController())
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<SectionFooterProvider.ContainerView>) -> UINavigationController {
-            return viewController
-        }
-        func updateUIViewController(_ uiViewController: SectionFooterProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<SectionFooterProvider.ContainerView>) {
-            
-        }
-    }
-}

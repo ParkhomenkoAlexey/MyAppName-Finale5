@@ -37,13 +37,10 @@ class MessagesViewController: MSMessagesAppViewController {
             child.removeFromParent()
         }
         
-        rootVC.delegate = self
-        let navigationVC = UINavigationController(rootViewController: rootVC)
+        rootVC.delegate = self        
+
         
-        navigationVC.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationVC.navigationBar.shadowImage = UIImage()
-        
-        let viewController = navigationVC
+        let viewController = rootVC
         
         addChild(viewController)
         

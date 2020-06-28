@@ -15,7 +15,7 @@ protocol AppFeatureVCDelegate: class {
 }
 
 class StickersViewController: UIViewController {
-
+    
     var stickers = [StickerModel]()
     
     var collectionView: UICollectionView!
@@ -25,23 +25,22 @@ class StickersViewController: UIViewController {
     let moreAppsService = MoreAppsService()
     
     weak var delegate: AppFeatureVCDelegate?
-
+    
     var userData = UserData()
     var appModels = [ResultModel]()
     
     enum Section {
         case main
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         IAPService.shared.getProducts()
         IAPService.shared.iapServiceDelegate = self
-
+        
         view.backgroundColor = .tertiarySystemBackground
         loadStickerData()
-        setupNavigationBar()
         setupCollectionView()
         setupDataSource()
         reloadData()
@@ -57,7 +56,7 @@ class StickersViewController: UIViewController {
             }
         }
     }
-
+    
     func loadStickerData() {
         if let path = Bundle.main.path(forResource: "StickerData", ofType: ".plist") {
             print("path: \(path)")
@@ -66,7 +65,7 @@ class StickersViewController: UIViewController {
                     let id = item["id"] as! Int
                     let name = item["name"] as! String
                     let isFree = item["isFree"] as! Bool
- 
+                    
                     let stickerObject = StickerModel(id: id, name: name, isFree: isFree)
                     if stickerObject.sticker != nil {
                         stickers.append(stickerObject)
@@ -75,18 +74,11 @@ class StickersViewController: UIViewController {
             }
         }
     }
-
+    
     func purchaseProduct() {
         ActivityIndicatorManager.shared.startActivityIndicator(on: self)
-
-            IAPService.shared.purchase(product: .nonConsumable)
-    }
-    
-    func setupNavigationBar() {
-    
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "App Features Light Mode Icon"), style: .plain, target: self, action: #selector(сubesButtonTapped))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Sticker Size Changer Light Mode Icon"), style: .plain, target: self, action: #selector(loopButtonTapped))
+        IAPService.shared.purchase(product: .nonConsumable)
     }
     
     func reloadData() {
@@ -105,6 +97,7 @@ class StickersViewController: UIViewController {
         collectionView.backgroundColor = .tertiarySystemBackground
         
         collectionView.register(SectionFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SectionFooter.reuseId)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
         collectionView.register(MyStickerCell.self, forCellWithReuseIdentifier: MyStickerCell.reuseId)
         
@@ -120,7 +113,7 @@ class StickersViewController: UIViewController {
         ])
         
         let bottomArea = -(UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!
-        collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: bottomArea, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomArea, right: 0)
         
     }
     
@@ -131,27 +124,31 @@ class StickersViewController: UIViewController {
             let float = CGFloat(1 / Double(UserSettings.countPhone))
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(float),
-                                                 heightDimension: .fractionalHeight(1.0))
+                                                  heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .fractionalWidth(float))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                             subitems: [item])
             
-
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: .fractionalWidth(float))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                           subitems: [item])
+            
+            
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: -8, leading: 8, bottom: 8, trailing: 8)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
             
             let sectionFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(514))
             let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionFooterSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
             
             sectionFooter.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -8, bottom: 0, trailing: -8)
+            
+            let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+            
             if !self.userData.productPurchased {
-            section.boundarySupplementaryItems = [sectionFooter]
+                section.boundarySupplementaryItems = [sectionHeader, sectionFooter]
             } else {
-                section.boundarySupplementaryItems = []
+                section.boundarySupplementaryItems = [sectionHeader]
             }
             
             return section
@@ -172,15 +169,26 @@ class StickersViewController: UIViewController {
         
         dataSource.supplementaryViewProvider = { (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
             
-            if let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionFooter.reuseId, for: indexPath) as? SectionFooter {
-                sectionFooter.appModels = self.appModels
-                sectionFooter.delegate = self
-                sectionFooter.messageDelegate = self
-                
-                return sectionFooter
+            print("kind", kind)
+            
+            if kind == "UICollectionElementKindSectionFooter" {
+                if let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionFooter.reuseId, for: indexPath) as? SectionFooter {
+                    sectionFooter.appModels = self.appModels
+                    sectionFooter.delegate = self
+                    sectionFooter.messageDelegate = self
+                    return sectionFooter
+                } else {
+                    fatalError("Cannot create new supplementary")
+                }
             } else {
-                fatalError("Cannot create new supplementary")
+                if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader {
+                    sectionHeader.delegate = self
+                    return sectionHeader
+                } else {
+                    fatalError("Cannot create new supplementary")
+                }
             }
+            
         }
     }
 }
@@ -195,46 +203,47 @@ extension StickersViewController: IAPServiceDelegate {
                        and: "This Apple ID has no registered purchases. You need to Unlock this Sticker Pack or use Free Version.",
                        isBuy: true)
     }
-
-
+    
+    
     func successTransactions() {
         ActivityIndicatorManager.shared.stopActivityIndicator()
         unlockAllItems()
     }
-
+    
     func failedTransactions() {
         ActivityIndicatorManager.shared.stopActivityIndicator()
     }
-
+    
     private func unlockAllItems() {
         userData.productPurchased = true
         collectionView.reloadData()
         self.showAlert(with: "Thank You!", and: "The Sticker Pack was successfully unlocked and you can use it right now.",
                        isBuy: false)
     }
-
+    
 }
 
 
 
 // MARK: - Actions
 
-extension StickersViewController: FooterButtonsDelegate {
+extension StickersViewController: FooterButtonsDelegate, HeaderButtonsDelegate {
     
-    @objc func сubesButtonTapped() {
-
-        let cubeController = CubeMenuViewController()
-        self.navigationController?.pushViewController(cubeController, animated: true)
+    func cubesButtonPressed() {
+        let navigationVC = UINavigationController(rootViewController: CubeMenuViewController())
+        navigationVC.navigationBar.barTintColor = .tertiarySystemBackground
+        navigationVC.navigationBar.shadowImage = UIImage()
+        navigationVC.navigationBar.isTranslucent = false
         
+        navigationVC.modalPresentationStyle = .fullScreen
+        present(navigationVC, animated: true, completion: nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.delegate?.appFeatureVCDidSelectAdd()
         }
-        
     }
     
-    @objc func loopButtonTapped() {
-        
+    func loopButtonPressed() {
         if UserSettings.countPhone > 5 {
             UserSettings.countPhone = 3
         } else {
@@ -245,7 +254,7 @@ extension StickersViewController: FooterButtonsDelegate {
     }
     
     func unlockButtonPressed() {
-
+        
         purchaseProduct()
     }
     
@@ -257,18 +266,18 @@ extension StickersViewController: FooterButtonsDelegate {
 
 // MARK: - MessageExtensionDelegate
 extension StickersViewController: MessageExtensionDelegate {
-
+    
     func openStoreApp(id: String) {
         
         if let idNumber = Int(id) {
             openStoreProductWithiTunesItemIdentifier(idNumber)
         }
     }
-
+    
     private func openStoreProductWithiTunesItemIdentifier(_ identifier: Int) {
         let storeViewController = SKStoreProductViewController()
         storeViewController.delegate = self
-
+        
         let parameters = [ SKStoreProductParameterITunesItemIdentifier : identifier]
         storeViewController.loadProduct(withParameters: parameters, completionBlock: nil)
         present(storeViewController, animated: true, completion: nil)
@@ -277,40 +286,8 @@ extension StickersViewController: MessageExtensionDelegate {
 
 // MARK: - SKStoreProductViewControllerDelegate
 extension StickersViewController: SKStoreProductViewControllerDelegate{
-
+    
     func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
         viewController.dismiss(animated: true, completion: nil)
-    }
-}
-
-
-// MARK: - SwiftUI
-import SwiftUI
-
-struct StickersVCProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            Group {
-                ContainerView().edgesIgnoringSafeArea(.all)
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-                    .previewDisplayName("iPhone 11 Pro")
-                
-                ContainerView().edgesIgnoringSafeArea(.all)
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 7"))
-                    .previewDisplayName("iPhone 7")
-            }
-        }
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = UINavigationController(rootViewController: StickersViewController())
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<StickersVCProvider.ContainerView>) -> UINavigationController {
-            return viewController
-        }
-        func updateUIViewController(_ uiViewController: StickersVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<StickersVCProvider.ContainerView>) {
-            
-        }
     }
 }
