@@ -103,6 +103,7 @@ class StickersViewController: UIViewController {
         collectionView.register(MyStickerCell.self, forCellWithReuseIdentifier: MyStickerCell.reuseId)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         
@@ -113,8 +114,7 @@ class StickersViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        let bottomArea = -(UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomArea, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -34, right: 0)
         
     }
     
@@ -190,6 +190,33 @@ class StickersViewController: UIViewController {
                 }
             }
             
+        }
+    }
+}
+
+extension StickersViewController: UICollectionViewDelegate {
+    // MARK: - animate stikers
+    func stickerCanAnimate(sticker: MSSticker) -> Bool {
+        guard let stickerImageSource = CGImageSourceCreateWithURL(sticker.imageFileURL as CFURL, nil) else { return false }
+        let stickerFrameCount = CGImageSourceGetCount(stickerImageSource)
+        return stickerFrameCount > 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if cell.reuseIdentifier == MyStickerCell.reuseId {
+            let stickerCell = cell as! MyStickerCell
+            if stickerCanAnimate(sticker: stickerCell.stickerView.sticker!) {
+                stickerCell.stickerView.startAnimating()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if cell.reuseIdentifier == MyStickerCell.reuseId {
+            let stickerCell = cell as! MyStickerCell
+            if stickerCell.stickerView.isAnimating() {
+                stickerCell.stickerView.stopAnimating()
+            }
         }
     }
 }

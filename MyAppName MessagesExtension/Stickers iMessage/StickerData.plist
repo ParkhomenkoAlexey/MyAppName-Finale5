@@ -30,7 +30,7 @@
 		<key>id</key>
 		<integer>3</integer>
 		<key>name</key>
-		<string>Sticker-4.png</string>
+		<string>Sticker-4.gif</string>
 		<key>isFree</key>
 		<true/>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>id</key>
 		<integer>4</integer>
 		<key>name</key>
-		<string>Sticker-5.png</string>
+		<string>Sticker-5.gif</string>
 		<key>isFree</key>
 		<true/>
 	</dict>
@@ -46,7 +46,7 @@
 		<key>id</key>
 		<integer>5</integer>
 		<key>name</key>
-		<string>Sticker-6.png</string>
+		<string>Sticker-6.gif</string>
 		<key>isFree</key>
 		<true/>
 	</dict>

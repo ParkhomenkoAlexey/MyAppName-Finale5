@@ -123,7 +123,7 @@ extension CubeMenuViewController: UITableViewDelegate, UITableViewDataSource {
                 case 0:
                     self?.goToWatsApp()
                 case 1:
-                    print("1")
+                    self?.viewAllApps()
                 case 2:
                     self?.rateApp()
                 default:
@@ -154,6 +154,15 @@ extension CubeMenuViewController {
             self.showAlert(with: "Attention!", and: "To add this Sticker Pack to WhatsApp, you need to Unlock it or Restore Your Purchase.", isBuy: true, completion: {
                 IAPService.shared.purchase(product: .nonConsumable)
             })
+        }
+    }
+    
+    private func viewAllApps() {
+        guard let url = URL(string: "itms-apps://itunes.apple.com/developer/1288067083") else { return }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
     }
 

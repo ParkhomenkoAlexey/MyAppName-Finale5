@@ -25,29 +25,23 @@
 		F022E476249E3D2300BFE089 /* Sticker-22.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E457249E3D2100BFE089 /* Sticker-22.png */; };
 		F022E477249E3D2300BFE089 /* Sticker-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E458249E3D2100BFE089 /* Sticker-7.png */; };
 		F022E478249E3D2300BFE089 /* Sticker-26.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E459249E3D2100BFE089 /* Sticker-26.png */; };
-		F022E479249E3D2300BFE089 /* Sticker-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45A249E3D2100BFE089 /* Sticker-1.png */; };
 		F022E47A249E3D2300BFE089 /* Sticker-13.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45B249E3D2100BFE089 /* Sticker-13.png */; };
 		F022E47B249E3D2300BFE089 /* Sticker-30.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45C249E3D2100BFE089 /* Sticker-30.png */; };
 		F022E47C249E3D2300BFE089 /* Sticker-12.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45D249E3D2100BFE089 /* Sticker-12.png */; };
 		F022E47D249E3D2300BFE089 /* Sticker-23.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45E249E3D2100BFE089 /* Sticker-23.png */; };
 		F022E47E249E3D2300BFE089 /* Sticker-20.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E45F249E3D2100BFE089 /* Sticker-20.png */; };
-		F022E47F249E3D2300BFE089 /* Sticker-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E460249E3D2100BFE089 /* Sticker-2.png */; };
 		F022E480249E3D2300BFE089 /* StickerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F022E461249E3D2100BFE089 /* StickerData.plist */; };
 		F022E481249E3D2300BFE089 /* Sticker-10.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E462249E3D2200BFE089 /* Sticker-10.png */; };
-		F022E482249E3D2300BFE089 /* Sticker-6.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E463249E3D2200BFE089 /* Sticker-6.png */; };
 		F022E483249E3D2300BFE089 /* Sticker-27.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E464249E3D2200BFE089 /* Sticker-27.png */; };
 		F022E484249E3D2300BFE089 /* Sticker-29.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E465249E3D2200BFE089 /* Sticker-29.png */; };
 		F022E485249E3D2300BFE089 /* Sticker-11.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E466249E3D2200BFE089 /* Sticker-11.png */; };
 		F022E486249E3D2300BFE089 /* Sticker-25.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E467249E3D2200BFE089 /* Sticker-25.png */; };
 		F022E487249E3D2300BFE089 /* Sticker-28.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E468249E3D2200BFE089 /* Sticker-28.png */; };
-		F022E488249E3D2300BFE089 /* Sticker-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E469249E3D2200BFE089 /* Sticker-4.png */; };
 		F022E489249E3D2300BFE089 /* Sticker-17.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46A249E3D2200BFE089 /* Sticker-17.png */; };
 		F022E48A249E3D2300BFE089 /* Sticker-14.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46B249E3D2200BFE089 /* Sticker-14.png */; };
-		F022E48B249E3D2300BFE089 /* Sticker-5.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46C249E3D2200BFE089 /* Sticker-5.png */; };
 		F022E48C249E3D2300BFE089 /* Sticker-24.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46D249E3D2200BFE089 /* Sticker-24.png */; };
 		F022E48D249E3D2300BFE089 /* Sticker-18.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46E249E3D2200BFE089 /* Sticker-18.png */; };
 		F022E48E249E3D2300BFE089 /* Sticker-8.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E46F249E3D2300BFE089 /* Sticker-8.png */; };
-		F022E48F249E3D2300BFE089 /* Sticker-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E470249E3D2300BFE089 /* Sticker-3.png */; };
 		F022E490249E3D2300BFE089 /* Sticker-19.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E471249E3D2300BFE089 /* Sticker-19.png */; };
 		F022E491249E3D2300BFE089 /* Sticker-9.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E472249E3D2300BFE089 /* Sticker-9.png */; };
 		F022E492249E3D2300BFE089 /* Sticker-16.png in Resources */ = {isa = PBXBuildFile; fileRef = F022E473249E3D2300BFE089 /* Sticker-16.png */; };
@@ -63,6 +57,12 @@
 		F0296952249F863800CAF07D /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0296951249F863800CAF07D /* UIFont + Extension.swift */; };
 		F04A21B724A75A9200224F32 /* MoreAppsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04A21B624A75A9200224F32 /* MoreAppsModel.swift */; };
 		F04C271124A7787B003C8553 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C271024A7787B003C8553 /* SectionHeader.swift */; };
+		F04C271524A8CB41003C8553 /* Sticker-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F04C271224A8CB40003C8553 /* Sticker-3.png */; };
+		F04C271624A8CB41003C8553 /* Sticker-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F04C271324A8CB40003C8553 /* Sticker-1.png */; };
+		F04C271724A8CB41003C8553 /* Sticker-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F04C271424A8CB41003C8553 /* Sticker-2.png */; };
+		F04C271B24A8CBAF003C8553 /* Sticker-6.gif in Resources */ = {isa = PBXBuildFile; fileRef = F04C271824A8CBAF003C8553 /* Sticker-6.gif */; };
+		F04C271C24A8CBAF003C8553 /* Sticker-5.gif in Resources */ = {isa = PBXBuildFile; fileRef = F04C271924A8CBAF003C8553 /* Sticker-5.gif */; };
+		F04C271D24A8CBAF003C8553 /* Sticker-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = F04C271A24A8CBAF003C8553 /* Sticker-4.gif */; };
 		F09FB7DC24A634E7005B3AD1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09FB7DB24A634E7005B3AD1 /* StoreKit.framework */; };
 		F0CD191124A3604A00494A18 /* StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD191024A3604A00494A18 /* StickersViewController.swift */; };
 		F0CD191A24A3606200494A18 /* StickerPackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CD191224A3606100494A18 /* StickerPackManager.swift */; };
@@ -163,29 +163,23 @@
 		F022E457249E3D2100BFE089 /* Sticker-22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-22.png"; sourceTree = "<group>"; };
 		F022E458249E3D2100BFE089 /* Sticker-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-7.png"; sourceTree = "<group>"; };
 		F022E459249E3D2100BFE089 /* Sticker-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-26.png"; sourceTree = "<group>"; };
-		F022E45A249E3D2100BFE089 /* Sticker-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-1.png"; sourceTree = "<group>"; };
 		F022E45B249E3D2100BFE089 /* Sticker-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-13.png"; sourceTree = "<group>"; };
 		F022E45C249E3D2100BFE089 /* Sticker-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-30.png"; sourceTree = "<group>"; };
 		F022E45D249E3D2100BFE089 /* Sticker-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-12.png"; sourceTree = "<group>"; };
 		F022E45E249E3D2100BFE089 /* Sticker-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-23.png"; sourceTree = "<group>"; };
 		F022E45F249E3D2100BFE089 /* Sticker-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-20.png"; sourceTree = "<group>"; };
-		F022E460249E3D2100BFE089 /* Sticker-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-2.png"; sourceTree = "<group>"; };
 		F022E461249E3D2100BFE089 /* StickerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StickerData.plist; sourceTree = "<group>"; };
 		F022E462249E3D2200BFE089 /* Sticker-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-10.png"; sourceTree = "<group>"; };
-		F022E463249E3D2200BFE089 /* Sticker-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-6.png"; sourceTree = "<group>"; };
 		F022E464249E3D2200BFE089 /* Sticker-27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-27.png"; sourceTree = "<group>"; };
 		F022E465249E3D2200BFE089 /* Sticker-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-29.png"; sourceTree = "<group>"; };
 		F022E466249E3D2200BFE089 /* Sticker-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-11.png"; sourceTree = "<group>"; };
 		F022E467249E3D2200BFE089 /* Sticker-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-25.png"; sourceTree = "<group>"; };
 		F022E468249E3D2200BFE089 /* Sticker-28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-28.png"; sourceTree = "<group>"; };
-		F022E469249E3D2200BFE089 /* Sticker-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-4.png"; sourceTree = "<group>"; };
 		F022E46A249E3D2200BFE089 /* Sticker-17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-17.png"; sourceTree = "<group>"; };
 		F022E46B249E3D2200BFE089 /* Sticker-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-14.png"; sourceTree = "<group>"; };
-		F022E46C249E3D2200BFE089 /* Sticker-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-5.png"; sourceTree = "<group>"; };
 		F022E46D249E3D2200BFE089 /* Sticker-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-24.png"; sourceTree = "<group>"; };
 		F022E46E249E3D2200BFE089 /* Sticker-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-18.png"; sourceTree = "<group>"; };
 		F022E46F249E3D2300BFE089 /* Sticker-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-8.png"; sourceTree = "<group>"; };
-		F022E470249E3D2300BFE089 /* Sticker-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-3.png"; sourceTree = "<group>"; };
 		F022E471249E3D2300BFE089 /* Sticker-19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-19.png"; sourceTree = "<group>"; };
 		F022E472249E3D2300BFE089 /* Sticker-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-9.png"; sourceTree = "<group>"; };
 		F022E473249E3D2300BFE089 /* Sticker-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-16.png"; sourceTree = "<group>"; };
@@ -199,6 +193,12 @@
 		F0296951249F863800CAF07D /* UIFont + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		F04A21B624A75A9200224F32 /* MoreAppsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAppsModel.swift; sourceTree = "<group>"; };
 		F04C271024A7787B003C8553 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		F04C271224A8CB40003C8553 /* Sticker-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-3.png"; sourceTree = "<group>"; };
+		F04C271324A8CB40003C8553 /* Sticker-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-1.png"; sourceTree = "<group>"; };
+		F04C271424A8CB41003C8553 /* Sticker-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker-2.png"; sourceTree = "<group>"; };
+		F04C271824A8CBAF003C8553 /* Sticker-6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Sticker-6.gif"; sourceTree = "<group>"; };
+		F04C271924A8CBAF003C8553 /* Sticker-5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Sticker-5.gif"; sourceTree = "<group>"; };
+		F04C271A24A8CBAF003C8553 /* Sticker-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Sticker-4.gif"; sourceTree = "<group>"; };
 		F09FB7DB24A634E7005B3AD1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F0CD191024A3604A00494A18 /* StickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickersViewController.swift; sourceTree = "<group>"; };
 		F0CD191224A3606100494A18 /* StickerPackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerPackManager.swift; sourceTree = "<group>"; };
@@ -354,12 +354,12 @@
 		F022E455249E3CD000BFE089 /* Stickers iMessage */ = {
 			isa = PBXGroup;
 			children = (
-				F022E45A249E3D2100BFE089 /* Sticker-1.png */,
-				F022E460249E3D2100BFE089 /* Sticker-2.png */,
-				F022E470249E3D2300BFE089 /* Sticker-3.png */,
-				F022E469249E3D2200BFE089 /* Sticker-4.png */,
-				F022E46C249E3D2200BFE089 /* Sticker-5.png */,
-				F022E463249E3D2200BFE089 /* Sticker-6.png */,
+				F04C271324A8CB40003C8553 /* Sticker-1.png */,
+				F04C271424A8CB41003C8553 /* Sticker-2.png */,
+				F04C271224A8CB40003C8553 /* Sticker-3.png */,
+				F04C271A24A8CBAF003C8553 /* Sticker-4.gif */,
+				F04C271924A8CBAF003C8553 /* Sticker-5.gif */,
+				F04C271824A8CBAF003C8553 /* Sticker-6.gif */,
 				F022E458249E3D2100BFE089 /* Sticker-7.png */,
 				F022E46F249E3D2300BFE089 /* Sticker-8.png */,
 				F022E472249E3D2300BFE089 /* Sticker-9.png */,
@@ -621,7 +621,6 @@
 				F0CD195B24A360D000494A18 /* WASticker-19.png in Resources */,
 				F0CD195824A360D000494A18 /* WASticker-20.png in Resources */,
 				F022E48E249E3D2300BFE089 /* Sticker-8.png in Resources */,
-				F022E47F249E3D2300BFE089 /* Sticker-2.png in Resources */,
 				F0CD192124A3606200494A18 /* sticker_packs.wasticker in Resources */,
 				F022E47E249E3D2300BFE089 /* Sticker-20.png in Resources */,
 				F022E489249E3D2300BFE089 /* Sticker-17.png in Resources */,
@@ -629,10 +628,12 @@
 				F022E484249E3D2300BFE089 /* Sticker-29.png in Resources */,
 				F022E477249E3D2300BFE089 /* Sticker-7.png in Resources */,
 				F022E483249E3D2300BFE089 /* Sticker-27.png in Resources */,
+				F04C271624A8CB41003C8553 /* Sticker-1.png in Resources */,
 				F0CD196B24A360EB00494A18 /* SFUIText-Regular.ttf in Resources */,
 				F0CD196824A360D000494A18 /* WASticker-26.png in Resources */,
 				F0CD196024A360D000494A18 /* WASticker-3.png in Resources */,
 				F0CD194A24A360D000494A18 /* WASticker-21.png in Resources */,
+				F04C271B24A8CBAF003C8553 /* Sticker-6.gif in Resources */,
 				F0CD195224A360D000494A18 /* WASticker-6.png in Resources */,
 				F0CD195D24A360D000494A18 /* WASticker-29.png in Resources */,
 				F022E48A249E3D2300BFE089 /* Sticker-14.png in Resources */,
@@ -640,19 +641,20 @@
 				F0CD195E24A360D000494A18 /* WASticker-5.png in Resources */,
 				F0CD194F24A360D000494A18 /* WASticker-28.png in Resources */,
 				F0CD195A24A360D000494A18 /* WASticker-13.png in Resources */,
+				F04C271C24A8CBAF003C8553 /* Sticker-5.gif in Resources */,
 				F0CD195724A360D000494A18 /* WASticker-17.png in Resources */,
 				F022E478249E3D2300BFE089 /* Sticker-26.png in Resources */,
 				F0CD196124A360D000494A18 /* WASticker-9.png in Resources */,
 				F022E48D249E3D2300BFE089 /* Sticker-18.png in Resources */,
-				F022E479249E3D2300BFE089 /* Sticker-1.png in Resources */,
 				F022E48C249E3D2300BFE089 /* Sticker-24.png in Resources */,
 				F022E448249E3ACA00BFE089 /* Assets.xcassets in Resources */,
 				F022E490249E3D2300BFE089 /* Sticker-19.png in Resources */,
 				F0CD195024A360D000494A18 /* WASticker-1.png in Resources */,
 				F022E486249E3D2300BFE089 /* Sticker-25.png in Resources */,
 				F0CD195624A360D000494A18 /* WASticker-4.png in Resources */,
+				F04C271724A8CB41003C8553 /* Sticker-2.png in Resources */,
 				F0CD195324A360D000494A18 /* WASticker-11.png in Resources */,
-				F022E482249E3D2300BFE089 /* Sticker-6.png in Resources */,
+				F04C271524A8CB41003C8553 /* Sticker-3.png in Resources */,
 				F0CD196624A360D000494A18 /* WASticker-27.png in Resources */,
 				F022E475249E3D2300BFE089 /* Sticker-15.png in Resources */,
 				F0CD196224A360D000494A18 /* WASticker-12.png in Resources */,
@@ -663,6 +665,7 @@
 				F022E485249E3D2300BFE089 /* Sticker-11.png in Resources */,
 				F0CD194D24A360D000494A18 /* WATrayIcon.png in Resources */,
 				F0CD194B24A360D000494A18 /* WASticker-15.png in Resources */,
+				F04C271D24A8CBAF003C8553 /* Sticker-4.gif in Resources */,
 				F0CD195524A360D000494A18 /* WASticker-22.png in Resources */,
 				F0296950249F861F00CAF07D /* SFProDisplay-Semibold.ttf in Resources */,
 				F022E47B249E3D2300BFE089 /* Sticker-30.png in Resources */,
@@ -671,14 +674,11 @@
 				F022E446249E3AC900BFE089 /* MainInterface.storyboard in Resources */,
 				F0CD194E24A360D000494A18 /* WASticker-16.png in Resources */,
 				F022E491249E3D2300BFE089 /* Sticker-9.png in Resources */,
-				F022E48B249E3D2300BFE089 /* Sticker-5.png in Resources */,
 				F022E487249E3D2300BFE089 /* Sticker-28.png in Resources */,
 				F022E476249E3D2300BFE089 /* Sticker-22.png in Resources */,
 				F022E47D249E3D2300BFE089 /* Sticker-23.png in Resources */,
-				F022E488249E3D2300BFE089 /* Sticker-4.png in Resources */,
 				F029694D249F861700CAF07D /* SF-Pro-Text-Semibold.ttf in Resources */,
 				F0CD196424A360D000494A18 /* WASticker-7.png in Resources */,
-				F022E48F249E3D2300BFE089 /* Sticker-3.png in Resources */,
 				F0CD195924A360D000494A18 /* WASticker-14.png in Resources */,
 				F0CD196324A360D000494A18 /* WASticker-23.png in Resources */,
 				F022E47A249E3D2300BFE089 /* Sticker-13.png in Resources */,
