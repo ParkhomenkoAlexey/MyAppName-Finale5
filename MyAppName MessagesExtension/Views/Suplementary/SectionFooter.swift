@@ -35,9 +35,22 @@ class SectionFooter: UICollectionReusableView {
     weak var messageDelegate: MessageExtensionDelegate?
     
     var appModels = [ResultModel]()
+    let moreAppsService = MoreAppsService()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        moreAppsService.getApps { [weak self] (result) in
+            switch result {
+                
+            case .success(let apps):
+                self?.appModels = apps.results.filter { $0.artworkUrl100 != nil }
+                self?.layoutSubviews()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         
         setupElements()
         setupConstraints()
@@ -173,7 +186,6 @@ extension SectionFooter: UICollectionViewDelegate, UICollectionViewDataSource {
             messageDelegate?.openStoreApp(id: String(appId))
         }
     }
-
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -193,14 +205,13 @@ extension SectionFooter: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        let numberOfCells: Int = Int(ceil(Double(appModels.count / 2))) // 2
+        let numberOfCells = Int(ceil(Double(appModels.count) / 2))
         let totalCellWidth = Int(cellSize.width) * numberOfCells
         let totalSpacingWidth = Int(sectionInserts.left) * (numberOfCells - 1)
         
         if CGFloat(totalCellWidth + totalSpacingWidth) > collectionView.frame.width {
             return sectionInserts
         } else {
-        
             let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
             let rightInset = leftInset
 

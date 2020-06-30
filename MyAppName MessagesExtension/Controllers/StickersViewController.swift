@@ -22,12 +22,9 @@ class StickersViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, StickerModel>! = nil
     var currentSnapshot: NSDiffableDataSourceSnapshot<Section, StickerModel>! = nil
     
-    let moreAppsService = MoreAppsService()
-    
     weak var delegate: AppFeatureVCDelegate?
     
     var userData = UserData()
-    var appModels = [ResultModel]()
     
     enum Section {
         case main
@@ -44,18 +41,7 @@ class StickersViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData()
-        print(UserSettings.shared.currentCount)
         
-        moreAppsService.getApps { [weak self] (result) in
-            switch result {
-                
-            case .success(let apps):
-                self?.appModels = apps.results.filter { $0.artworkUrl != nil }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     func loadStickerData() {
@@ -114,8 +100,13 @@ class StickersViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -34, right: 0)
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let bottomArea = -(UIApplication.shared.keyWindow?.safeAreaInsets.bottom)!
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomArea, right: 0)
     }
     
     // MARK: - Layout
@@ -174,7 +165,6 @@ class StickersViewController: UIViewController {
             
             if kind == "UICollectionElementKindSectionFooter" {
                 if let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionFooter.reuseId, for: indexPath) as? SectionFooter {
-                    sectionFooter.appModels = self.appModels
                     sectionFooter.delegate = self
                     sectionFooter.messageDelegate = self
                     return sectionFooter
@@ -194,7 +184,13 @@ class StickersViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension StickersViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        purchaseProduct()
+    }
+    
     // MARK: - animate stikers
     func stickerCanAnimate(sticker: MSSticker) -> Bool {
         guard let stickerImageSource = CGImageSourceCreateWithURL(sticker.imageFileURL as CFURL, nil) else { return false }
@@ -229,7 +225,9 @@ extension StickersViewController: IAPServiceDelegate {
         ActivityIndicatorManager.shared.stopActivityIndicator()
         self.showAlert(with: "You Have Nothing to Restore",
                        and: "This Apple ID has no registered purchases. You need to Unlock this Sticker Pack or use Free Version.",
-                       isBuy: true)
+                       isBuy: true) { [weak self] in
+                        self?.purchaseProduct()
+        }
     }
     
     
@@ -251,8 +249,6 @@ extension StickersViewController: IAPServiceDelegate {
     
 }
 
-
-
 // MARK: - Actions
 
 extension StickersViewController: FooterButtonsDelegate, HeaderButtonsDelegate {
@@ -272,7 +268,6 @@ extension StickersViewController: FooterButtonsDelegate, HeaderButtonsDelegate {
     }
     
     func loopButtonPressed() {
-        
         if UserSettings.shared.currentCount > UserSettings.shared.viewType.rawValue + 2 {
             UserSettings.shared.currentCount = UserSettings.shared.viewType.rawValue
         } else {
@@ -283,7 +278,6 @@ extension StickersViewController: FooterButtonsDelegate, HeaderButtonsDelegate {
     }
     
     func unlockButtonPressed() {
-        
         purchaseProduct()
     }
     
